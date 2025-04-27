@@ -68,7 +68,9 @@ Bu proje, bir telefon rehberi sistemini mikroservisler mimarisi ile geliştirmek
 
 1. Gerekli bağımlılıkların yüklenmesi
 | ------------- | ------------------------------------------- |
-
+| Alan          | Açıklama                                    |
+| ------------- | ------------------------------------------- |
+| **Kişi (Person)**    | Kişiye özel bilgiler                        |
 | dotnet restore |
 
 3. PostgreSQL ve Kafka'nın Docker üzerinden çalıştırılması
