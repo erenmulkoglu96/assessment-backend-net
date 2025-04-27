@@ -89,6 +89,9 @@ dotnet run --project ReportService
 7. Swagger Üzerinden Test Etmek
 ```bash
 https://localhost:44393/swagger
+
+8. Arayüzden Uygulamayı inceleyin.
+```bash https://localhost:44393/index.html
 ```
 
 ### 🧪 Unit Test Çalıştırmak:
