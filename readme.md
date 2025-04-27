@@ -36,6 +36,7 @@ Bu proje, bir telefon rehberi sistemini mikroservisler mimarisi ile geliştirmek
 | FirstName     | İsim                                        |
 | LastName      | Soyisim                                     |
 | Company       | Çalıştığı Şirket                            |
+| ContactInfos       | 	İletişim Bilgileri                            |
 | **İletişim Bilgisi (ContactInfo)** | İletişim Bilgileri                        |
 | Type          | Bilgi Tipi (Telefon Numarası, E-mail, Konum) |
 | Content       | Bilgi İçeriği (Numara, E-posta, Şehir)       |
