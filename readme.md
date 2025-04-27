@@ -52,15 +52,16 @@ Bu proje, bir telefon rehberi sistemini mikroservisler mimarisi ile geliştirmek
 
 🛠 Teknik Gereksinimler ve Durum:
 
-Gereksinim | Durum
-Projenin sık commitlerle geliştirilmesi |  Yapıldı
-Git üzerinde master, development branch kullanımı |  Yapıldı
-Git üzerinde sürüm taglemesi (v1.0.0) |  Yapıldı
-Minimum %60 unit testing code coverage |  Yapıldı
-Migration yapısının oluşturulması |  Yapıldı
-README.md dökümantasyonu oluşturulması |  Yapıldı
-Servislerin HTTP REST üzerinden haberleşmesi |  Yapıldı
-Rapor kısmında Kafka ile asenkron yapı kullanımı |  Yapıldı
+| İstenilen Gereksinim          | Durum                                    |
+| ------------- | ------------------------------------------- |
+|Projenin sık commitlerle geliştirilmesi |  Yapıldı
+|Git üzerinde master, development branch kullanımı |  Yapıldı
+|Git üzerinde sürüm taglemesi (v1.0.0) |  Yapıldı
+|Minimum %60 unit testing code coverage |  Yapıldı
+|Migration yapısının oluşturulması |  Yapıldı
+|README.md dökümantasyonu oluşturulması |  Yapıldı
+|Servislerin REST API ile iletişim kuruyor, HTTP REST üzerinden haberleşmesi |  Yapıldı
+|Rapor kısmında Kafka ile asenkron yapı kullanımı |  Yapıldı
 
 
 ⚙️ Projenin Çalıştırılması:
