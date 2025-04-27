@@ -53,11 +53,17 @@ Content	Bilgi içeriği (ör. numara, email, şehir)
 Rapor (Report)
 
 Alan	Açıklama
+
 UUID	Raporun ID'si
+
 RequestedAt	Raporun talep edildiği zaman
+
 Status	Hazırlanıyor veya Tamamlandı
+
 CompletedAt	Rapor tamamlanma tarihi
+
 FilePath	JSON dosya yolu
+
 CsvPath	CSV dosya yolu
 
 
@@ -65,13 +71,21 @@ CsvPath	CSV dosya yolu
 🛠 Teknik Gereksinimler ve Durum:
 
 İstenilen Gereksinim									Durum
+
 Projenin sık commitlerle geliştirilmesi					Yapıldı
+
 Git üzerinde master, development branch yapısı			Yapıldı
+
 Git üzerinde sürüm taglemesi (v1.0.0)					Yapıldı
+
 Minimum %60 unit testing coverage						Yapıldı
+
 Veritabanı Migration yapısı oluşturuldu					Yapıldı
+
 README.md hazırlanması									Yapıldı
+
 Servisler REST API ile iletişim kuruyor					Yapıldı
+
 Raporlar Kafka ile asenkron hazırlanıyor				Yapıldı
 
 
