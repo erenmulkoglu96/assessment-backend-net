@@ -68,14 +68,43 @@ namespace ReportService.Services
 
             var json = JsonConvert.SerializeObject(reportData, Formatting.Indented);
 
-            var fileName = $"report-{Guid.NewGuid()}.json";
             var folderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "reports");
             Directory.CreateDirectory(folderPath); // klasör yoksa oluştur
-            var filePath = Path.Combine(folderPath, fileName);
 
-            await File.WriteAllTextAsync(filePath, json);
+            var jsonFileName = $"report-{Guid.NewGuid()}.json";
+            var jsonFilePath = Path.Combine(folderPath, jsonFileName);
 
-            return filePath; // içerik yerine artık dosya yolu dönüyoruz
+            await File.WriteAllTextAsync(jsonFilePath, json);
+
+            // 🎯 CSV dosyası oluştur
+            var csvFileName = $"report-{Guid.NewGuid()}.csv";
+            var csvFilePath = Path.Combine(folderPath, csvFileName);
+
+            var csvBuilder = new StringBuilder();
+            csvBuilder.AppendLine("Location,PersonCount,PhoneNumberCount");
+
+            foreach (var item in reportData)
+            {
+                csvBuilder.AppendLine($"{item.Location},{item.PersonCount},{item.PhoneNumberCount}");
+            }
+
+            var csvContent = csvBuilder.ToString();
+            await File.WriteAllTextAsync(csvFilePath, csvContent);
+
+            // 🎯 Report kaydını güncelle
+            var report = await _context.Reports.FindAsync(reportId);
+            if (report != null)
+            {
+                report.FilePath = $"/reports/{jsonFileName}";
+                report.CsvPath = $"/reports/{csvFileName}";
+                report.CsvContent = csvContent; // 📌 CSV içeriğini de kaydediyoruz
+                report.Status = ReportStatus.Completed;
+                report.CompletedAt = DateTime.UtcNow;
+
+                await _context.SaveChangesAsync();
+            }
+
+            return jsonFilePath; // JSON dosyasının path'ini geri döndürüyoruz
         }
 
 

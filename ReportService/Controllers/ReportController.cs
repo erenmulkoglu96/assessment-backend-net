@@ -38,15 +38,23 @@ public class ReportController : ControllerBase
     public async Task<IActionResult> GetReportById(Guid id)
     {
         var report = await _reportService.GetByIdAsync(id);
-        return report == null ? NotFound() : Ok(new
+        if (report == null)
+            return NotFound();
+
+        var baseUrl = $"{Request.Scheme}://{Request.Host}";
+        return Ok(new
         {
             report.Id,
             report.Status,
             report.RequestedAt,
             report.CompletedAt,
-            report.Content
+            report.Content,
+            report.FilePath,
+            report.CsvPath,
+            CsvUrl = string.IsNullOrEmpty(report.CsvPath) ? null : $"{baseUrl}{report.CsvPath}"
         });
     }
+
 
     [HttpGet("{id}/download")]
     public async Task<IActionResult> DownloadReportFile(Guid id)
