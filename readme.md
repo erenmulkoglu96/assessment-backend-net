@@ -3,7 +3,7 @@
 Bu proje, bir telefon rehberi sistemini mikroservisler mimarisi ile geliştirmek amacıyla .NET Core kullanılarak hazırlanmıştır.
 
 
-🛠 Kullanılan Teknolojiler:
+### 🛠 Kullanılan Teknolojiler:
 
 - .NET Core 9
 - PostgreSQL (Docker üzerinden çalıştırıldı)
@@ -13,7 +13,7 @@ Bu proje, bir telefon rehberi sistemini mikroservisler mimarisi ile geliştirmek
 - Git & GitHub
 
 
-📋 Projenin Özellikleri:
+### 📋 Projenin Özellikleri:
 
 - Rehberde kişi oluşturma
 - Rehberden kişi kaldırma
@@ -50,7 +50,7 @@ Bu proje, bir telefon rehberi sistemini mikroservisler mimarisi ile geliştirmek
 
 
 
-🛠 Teknik Gereksinimler ve Durum:
+### 🛠 Teknik Gereksinimler ve Durum:
 
 | İstenilen Gereksinim          | Durum                                    |
 | ------------- | ------------------------------------------- |
@@ -64,7 +64,7 @@ Bu proje, bir telefon rehberi sistemini mikroservisler mimarisi ile geliştirmek
 |Rapor kısmında Kafka ile asenkron yapı kullanımı |  Yapıldı
 
 
-⚙️ Projenin Çalıştırılması:
+### ⚙️ Projenin Çalıştırılması:
 
 1. Gerekli bağımlılıkların yüklenmesi
 ```bash
@@ -91,15 +91,16 @@ dotnet run --project ReportService
 https://localhost:44393/swagger
 ```
 
-🧪 Unit Test Çalıştırmak:
+### 🧪 Unit Test Çalıştırmak:
 
 Projede yazılan xUnit testlerini çalıştırmak için:
 ```bash
 dotnet test
 ```
 
-🚀 API Özellikleri:
+### 🚀 API Özellikleri:
 
+<ul><li>
 POST /api/person : Yeni kişi ekler
 
 DELETE /api/person/{id} : Kişiyi siler
@@ -123,14 +124,14 @@ GET /api/report/{id}/download : JSON rapor dosyasını indirir
 GET /api/report/{id}/download/csv : CSV rapor dosyasını indirir
 
 DELETE /api/report/{id} : Raporu ve dosyaları siler
+</li></ul>
 
-
-🛡️ Ekstra Özellikler:
+### 🛡️ Ekstra Özellikler:
 
 - Swagger UI üzerinden test yapılabilir
 - JSON ve CSV dosyaları wwwroot/reports klasörüne otomatik kaydedilir
 - Arka planda Kafka consumer çalışarak asenkron rapor üretimi sağlar
 
-📢 Not:
+### 📢 Not:
 
 Bu proje, teknik değerlendirme süreci için sıfırdan inşa edilerek hazırlanmış bir mimaridir. 
