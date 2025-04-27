@@ -67,18 +67,20 @@ Bu proje, bir telefon rehberi sistemini mikroservisler mimarisi ile geliştirmek
 ⚙️ Projenin Çalıştırılması:
 
 1. Gerekli bağımlılıkların yüklenmesi
+| ------------- | ------------------------------------------- |
+
 |dotnet restore|
 
-2. PostgreSQL ve Kafka'nın Docker üzerinden çalıştırılması
+3. PostgreSQL ve Kafka'nın Docker üzerinden çalıştırılması
 docker-compose -f docker-compose.yml -f docker-compose.kafka.yml up -d
 
-3. Veritabanı Migration işleminin yapılması
+4. Veritabanı Migration işleminin yapılması
 dotnet ef database update -p ReportService -s ReportService
 
-4. Uygulamanın Başlatılması
+5. Uygulamanın Başlatılması
 dotnet run --project ReportService
 
-5. Swagger Üzerinden Test Etmek
+6. Swagger Üzerinden Test Etmek
 https://localhost:44393/swagger
 
 
