@@ -135,3 +135,7 @@ dotnet test
 ### 📢 Not:
 
 Bu proje, teknik değerlendirme süreci için sıfırdan inşa edilerek hazırlanmış bir mimaridir. 
+
+
+### Authors:
+Eren Mülkoğlu
