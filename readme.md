@@ -63,27 +63,17 @@ FilePath	JSON dosya yolu
 CsvPath	CSV dosya yolu
 
 
-
 🛠 Teknik Gereksinimler ve Durum:
 
-İstenilen Gereksinim									Durum
-
-Projenin sık commitlerle geliştirilmesi					Yapıldı
-
-Git üzerinde master, development branch yapısı			Yapıldı
-
-Git üzerinde sürüm taglemesi (v1.0.0)					Yapıldı
-
-Minimum %60 unit testing coverage						Yapıldı
-
-Veritabanı Migration yapısı oluşturuldu					Yapıldı
-
-README.md hazırlanması									Yapıldı
-
-Servisler REST API ile iletişim kuruyor					Yapıldı
-
-Raporlar Kafka ile asenkron hazırlanıyor				Yapıldı
-
+Gereksinim | Durum
+Projenin sık commitlerle geliştirilmesi | ✅ Yapıldı
+Git üzerinde master, development branch kullanımı | ✅ Yapıldı
+Git üzerinde sürüm taglemesi (v1.0.0) | ✅ Yapıldı
+Minimum %60 unit testing code coverage | ✅ Yapıldı
+Migration yapısının oluşturulması | ✅ Yapıldı
+README.md dökümantasyonu oluşturulması | ✅ Yapıldı
+Servislerin HTTP REST üzerinden haberleşmesi | ✅ Yapıldı
+Rapor kısmında Kafka ile asenkron yapı kullanımı | ✅ Yapıldı
 
 
 ⚙️ Projenin Çalıştırılması:
