@@ -31,7 +31,7 @@ Bu proje, bir telefon rehberi sistemini mikroservisler mimarisi ile geliştirmek
 
 | Alan          | Açıklama                                    |
 | ------------- | ------------------------------------------- |
-| **Person**    | Kişiye özel bilgiler                        |
+| **Kişi (Person)**    | Kişiye özel bilgiler                        |
 | UUID          | Kişiye özel benzersiz ID                    |
 | FirstName     | İsim                                        |
 | LastName      | Soyisim                                     |
