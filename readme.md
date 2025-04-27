@@ -130,4 +130,4 @@ DELETE /api/report/{id} : Raporu ve dosyaları siler
 
 📢 Not:
 
-Bu proje, teknik değerlendirme süreci için hazırlanmıştır. 
+Bu proje, teknik değerlendirme süreci için sıfırdan inşa edilerek hazırlanmış bir mimaridir. 
