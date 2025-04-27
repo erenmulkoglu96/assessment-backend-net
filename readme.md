@@ -98,16 +98,27 @@ dotnet test
 🚀 API Özellikleri:
 
 POST /api/person : Yeni kişi ekler
+
 DELETE /api/person/{id} : Kişiyi siler
+
 POST /api/person/{personId}/contactinfo : Kişiye iletişim bilgisi ekler
+
 DELETE /api/contactinfo/{id} : İletişim bilgisini siler
+
 GET /api/person : Tüm kişileri listeler
+
 GET /api/person/{id} : Bir kişinin iletişim detaylarını getirir
+
 POST /api/report : Rapor talebi başlatır (asenkron çalışır)
+
 GET /api/report : Tüm raporları listeler
+
 GET /api/report/{id} : Bir raporu ve detaylarını getirir
+
 GET /api/report/{id}/download : JSON rapor dosyasını indirir
+
 GET /api/report/{id}/download/csv : CSV rapor dosyasını indirir
+
 DELETE /api/report/{id} : Raporu ve dosyaları siler
 
 
