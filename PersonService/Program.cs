@@ -1,7 +1,7 @@
 using PersonService.Data;
 using Microsoft.EntityFrameworkCore;
 using PersonService.Services;
-
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +10,12 @@ builder.Services.AddScoped<IContactInfoService, PersonService.Services.ContactIn
 
 
 // Swagger ve Controller desteði
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(x =>
+    {
+        x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+        x.JsonSerializerOptions.WriteIndented = true;
+    });
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

@@ -25,10 +25,19 @@ public class PersonService : IPersonService
 
     public async Task<Person> CreateAsync(Person person)
     {
+        person.Id = Guid.NewGuid(); // Her ihtimale karşı yeni id üretelim
+
+        foreach (var contact in person.ContactInfos)
+        {
+            contact.Id = Guid.NewGuid(); // Contact için de yeni ID
+            contact.PersonId = person.Id; // ilişkiyi kur
+        }
+
         _context.Persons.Add(person);
         await _context.SaveChangesAsync();
         return person;
     }
+
 
     public async Task<bool> DeleteAsync(Guid id)
     {

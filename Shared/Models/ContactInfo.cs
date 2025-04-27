@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Shared.Models
@@ -20,6 +21,9 @@ namespace Shared.Models
         public string Content { get; set; } = null!;
 
         public Guid PersonId { get; set; }
-        public Person Person { get; set; } = null!;
+        [JsonIgnore]
+        public Person? Person { get; set; }
+
+
     }
 }
