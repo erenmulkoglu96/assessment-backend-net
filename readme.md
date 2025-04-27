@@ -30,17 +30,26 @@ Bu proje, bir telefon rehberi sistemini mikroservisler mimarisi ile geliştirmek
 📚 Veri Yapıları
 Kişi (Person)
 
-Alan	Açıklama
+Alan	- Açıklama
+
 UUID	Kişiye özel benzersiz ID
+
 FirstName	İsim
+
 LastName	Soyisim
+
 Company	Çalıştığı şirket
+
 ContactInfos	İletişim Bilgileri
+
 İletişim Bilgisi (ContactInfo)
 
 Alan	Açıklama
+
 Type	Telefon Numarası, E-mail veya Konum
+
 Content	Bilgi içeriği (ör. numara, email, şehir)
+
 Rapor (Report)
 
 Alan	Açıklama
