@@ -1,9 +1,9 @@
 ﻿# 📖 PhoneBook Microservices Backend Assessment
 
-Bu proje, bir telefon rehberi sistemini mikroservisler mimarisi ile geliştirmek amacıyla .NET Core kullanılarak hazırlanmıştır.i
+Bu proje, bir telefon rehberi sistemini mikroservisler mimarisi ile geliştirmek amacıyla .NET Core kullanılarak hazırlanmıştır.
 
 
-🛠 Kullanılan Teknolojiler:
+### 🛠 Kullanılan Teknolojiler:
 
 - .NET Core 9
 - PostgreSQL (Docker üzerinden çalıştırıldı)
@@ -13,7 +13,7 @@ Bu proje, bir telefon rehberi sistemini mikroservisler mimarisi ile geliştirmek
 - Git & GitHub
 
 
-📋 Projenin Özellikleri:
+### 📋 Projenin Özellikleri:
 
 - Rehberde kişi oluşturma
 - Rehberden kişi kaldırma
@@ -27,96 +27,112 @@ Bu proje, bir telefon rehberi sistemini mikroservisler mimarisi ile geliştirmek
 - Raporlar hem JSON hem CSV formatında oluşturulabilir ve indirilebilir
 
 
-📚 Veri Yapıları:
+### 📚 Veri Yapıları
 
-Kişi (Person)
-
-Alan						Açıklama
-UUID						Kişiye özel benzersiz ID
-FirstName					İsim
-LastName					Soyisim
-Company						Çalıştığı şirket
-ContactInfos				İletişim Bilgileri
-
-
-İletişim Bilgisi			(ContactInfo)
-
-Alan						Açıklama
-Type						Telefon Numarası, E-mail veya Konum
-Content						Bilgi içeriği (ör. numara, email, şehir)
-
-
-Rapor (Report)
-
-Alan						Açıklama
-UUID						Raporun ID'si
-RequestedAt					Raporun talep edildiği zaman
-Status						Hazırlanıyor veya Tamamlandı
-CompletedAt					Rapor tamamlanma tarihi
-FilePath					JSON dosya yolu
-CsvPath						CSV dosya yolu
+| Alan          | Açıklama                                    |
+| ------------- | ------------------------------------------- |
+| **Kişi (Person)**    | Kişiye özel bilgiler                        |
+| UUID          | Kişiye özel benzersiz ID                    |
+| FirstName     | İsim                                        |
+| LastName      | Soyisim                                     |
+| Company       | Çalıştığı Şirket                            |
+| ContactInfos       | 	İletişim Bilgileri                            |
+| **İletişim Bilgisi (ContactInfo)** | İletişim Bilgileri                        |
+| Type          | Bilgi Tipi (Telefon Numarası, E-mail, Konum) |
+| Content       | Bilgi İçeriği (Numara, E-posta, Şehir)       |
+| **Rapor (Report)**    | Rapor Bilgileri                             |
+| UUID          | Raporun benzersiz ID'si                     |
+| RequestedAt   | Raporun talep edildiği zaman                |
+| Status        | Raporun Durumu (Preparing veya Completed)   |
+| CompletedAt   | Raporun tamamlanma zamanı                   |
+| FilePath      | JSON dosya yolu                             |
+| CsvPath       | CSV dosya yolu                              |
 
 
 
-🛠 Teknik Gereksinimler ve Durum:
+### 🛠 Teknik Gereksinimler ve Durum:
 
-İstenilen Gereksinim									Durum
-Projenin sık commitlerle geliştirilmesi					Yapıldı
-Git üzerinde master, development branch yapısı			Yapıldı
-Git üzerinde sürüm taglemesi (v1.0.0)					Yapıldı
-Minimum %60 unit testing coverage						Yapıldı
-Veritabanı Migration yapısı oluşturuldu					Yapıldı
-README.md hazırlanması									Yapıldı
-Servisler REST API ile iletişim kuruyor					Yapıldı
-Raporlar Kafka ile asenkron hazırlanıyor				Yapıldı
+| İstenilen Gereksinim          | Durum                                    |
+| ------------- | ------------------------------------------- |
+|Projenin sık commitlerle geliştirilmesi |  Yapıldı
+|Git üzerinde master, development branch kullanımı |  Yapıldı
+|Git üzerinde sürüm taglemesi (v1.0.0) |  Yapıldı
+|Minimum %60 unit testing code coverage |  Yapıldı
+|Migration yapısının oluşturulması |  Yapıldı
+|README.md dökümantasyonu oluşturulması |  Yapıldı
+|Servislerin REST API ile iletişim kuruyor, HTTP REST üzerinden haberleşmesi |  Yapıldı
+|Rapor kısmında Kafka ile asenkron yapı kullanımı |  Yapıldı
 
 
-
-⚙️ Projenin Çalıştırılması:
+### ⚙️ Projenin Çalıştırılması:
 
 1. Gerekli bağımlılıkların yüklenmesi
+```bash
 dotnet restore
+```
 
-2. PostgreSQL ve Kafka'nın Docker üzerinden çalıştırılması
+3. PostgreSQL ve Kafka'nın Docker üzerinden çalıştırılması
+```bash
 docker-compose -f docker-compose.yml -f docker-compose.kafka.yml up -d
+```
 
-3. Veritabanı Migration işleminin yapılması
+4. Veritabanı Migration işleminin yapılması
+```bash
 dotnet ef database update -p ReportService -s ReportService
+```
 
-4. Uygulamanın Başlatılması
+5. Uygulamanın Başlatılması
+```bash
 dotnet run --project ReportService
+```
 
-5. Swagger Üzerinden Test Etmek
+7. Swagger Üzerinden Test Etmek
+```bash
 https://localhost:44393/swagger
+```
 
-
-🧪 Unit Test Çalıştırmak:
+### 🧪 Unit Test Çalıştırmak:
 
 Projede yazılan xUnit testlerini çalıştırmak için:
+```bash
 dotnet test
+```
 
-🚀 API Özellikleri:
+### 🚀 API Özellikleri:
 
-POST /api/person : Yeni kişi ekler
-DELETE /api/person/{id} : Kişiyi siler
-POST /api/person/{personId}/contactinfo : Kişiye iletişim bilgisi ekler
-DELETE /api/contactinfo/{id} : İletişim bilgisini siler
-GET /api/person : Tüm kişileri listeler
-GET /api/person/{id} : Bir kişinin iletişim detaylarını getirir
-POST /api/report : Rapor talebi başlatır (asenkron çalışır)
-GET /api/report : Tüm raporları listeler
-GET /api/report/{id} : Bir raporu ve detaylarını getirir
-GET /api/report/{id}/download : JSON rapor dosyasını indirir
-GET /api/report/{id}/download/csv : CSV rapor dosyasını indirir
-DELETE /api/report/{id} : Raporu ve dosyaları siler
+<ul>
+<li>POST /api/person : Yeni kişi ekler</li>
 
+<li>DELETE /api/person/{id} : Kişiyi siler</li>
 
-🛡️ Ekstra Özellikler:
+<li>POST /api/person/{personId}/contactinfo : Kişiye iletişim bilgisi ekler</li>
+
+<li>DELETE /api/contactinfo/{id} : İletişim bilgisini siler</li>
+
+<li>GET /api/person : Tüm kişileri listeler</li>
+
+<li>GET /api/person/{id} : Bir kişinin iletişim detaylarını getirir</li>
+
+<li>POST /api/report : Rapor talebi başlatır (asenkron çalışır)</li>
+
+<li>GET /api/report : Tüm raporları listeler</li>
+
+<li>GET /api/report/{id} : Bir raporu ve detaylarını getirir</li>
+
+<li>GET /api/report/{id}/download : JSON rapor dosyasını indirir</li>
+
+<li>GET /api/report/{id}/download/csv : CSV rapor dosyasını indirir</li>
+
+<li>DELETE /api/report/{id} : Raporu ve dosyaları siler</li>
+</ul>
+
+### 🛡️ Ekstra Özellikler:
 
 - Swagger UI üzerinden test yapılabilir
 - JSON ve CSV dosyaları wwwroot/reports klasörüne otomatik kaydedilir
 - Arka planda Kafka consumer çalışarak asenkron rapor üretimi sağlar
 
-📢 Not:
+### 📢 Not:
 
-Bu proje, teknik değerlendirme süreci için hazırlanmıştır. 
+Bu proje, teknik değerlendirme süreci için sıfırdan inşa edilerek hazırlanmış bir mimaridir. 
+
