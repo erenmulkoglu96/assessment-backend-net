@@ -1,6 +1,6 @@
 ﻿# 📖 PhoneBook Microservices Backend Assessment
 
-Bu proje, bir telefon rehberi sistemini mikroservisler mimarisi ile geliştirmek amacıyla .NET Core kullanılarak hazırlanmıştır.i
+Bu proje, bir telefon rehberi sistemini mikroservisler mimarisi ile geliştirmek amacıyla .NET Core kullanılarak hazırlanmıştır.
 
 
 🛠 Kullanılan Teknolojiler:
