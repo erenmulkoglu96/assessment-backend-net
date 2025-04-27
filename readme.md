@@ -136,6 +136,3 @@ dotnet test
 
 Bu proje, teknik değerlendirme süreci için sıfırdan inşa edilerek hazırlanmış bir mimaridir. 
 
-
-### ![image](https://github.com/user-attachments/assets/5d863046-c464-4108-8181-630e6efe5221) Authors:
-Eren Mülkoğlu
