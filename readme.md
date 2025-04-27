@@ -27,34 +27,29 @@ Bu proje, bir telefon rehberi sistemini mikroservisler mimarisi ile geliştirmek
 - Raporlar hem JSON hem CSV formatında oluşturulabilir ve indirilebilir
 
 
-📚 Veri Yapıları:
-
+📚 Veri Yapıları
 Kişi (Person)
 
-Alan						Açıklama
-UUID						Kişiye özel benzersiz ID
-FirstName					İsim
-LastName					Soyisim
-Company						Çalıştığı şirket
-ContactInfos				İletişim Bilgileri
+Alan	Açıklama
+UUID	Kişiye özel benzersiz ID
+FirstName	İsim
+LastName	Soyisim
+Company	Çalıştığı şirket
+ContactInfos	İletişim Bilgileri
+İletişim Bilgisi (ContactInfo)
 
-
-İletişim Bilgisi			(ContactInfo)
-
-Alan						Açıklama
-Type						Telefon Numarası, E-mail veya Konum
-Content						Bilgi içeriği (ör. numara, email, şehir)
-
-
+Alan	Açıklama
+Type	Telefon Numarası, E-mail veya Konum
+Content	Bilgi içeriği (ör. numara, email, şehir)
 Rapor (Report)
 
-Alan						Açıklama
-UUID						Raporun ID'si
-RequestedAt					Raporun talep edildiği zaman
-Status						Hazırlanıyor veya Tamamlandı
-CompletedAt					Rapor tamamlanma tarihi
-FilePath					JSON dosya yolu
-CsvPath						CSV dosya yolu
+Alan	Açıklama
+UUID	Raporun ID'si
+RequestedAt	Raporun talep edildiği zaman
+Status	Hazırlanıyor veya Tamamlandı
+CompletedAt	Rapor tamamlanma tarihi
+FilePath	JSON dosya yolu
+CsvPath	CSV dosya yolu
 
 
 
