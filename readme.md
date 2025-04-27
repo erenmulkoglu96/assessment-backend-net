@@ -36,10 +36,10 @@ Bu proje, bir telefon rehberi sistemini mikroservisler mimarisi ile geliştirmek
 | FirstName     | İsim                                        |
 | LastName      | Soyisim                                     |
 | Company       | Çalıştığı Şirket                            |
-| **ContactInfo** | İletişim Bilgileri                        |
+| **İletişim Bilgisi (ContactInfo)** | İletişim Bilgileri                        |
 | Type          | Bilgi Tipi (Telefon Numarası, E-mail, Konum) |
 | Content       | Bilgi İçeriği (Numara, E-posta, Şehir)       |
-| **Report**    | Rapor Bilgileri                             |
+| **Rapor (Report)**    | Rapor Bilgileri                             |
 | UUID          | Raporun benzersiz ID'si                     |
 | RequestedAt   | Raporun talep edildiği zaman                |
 | Status        | Raporun Durumu (Preparing veya Completed)   |
