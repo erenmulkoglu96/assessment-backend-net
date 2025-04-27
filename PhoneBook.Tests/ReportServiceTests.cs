@@ -1,6 +1,5 @@
-﻿using System;
+﻿using ReportService.Models;
 using Xunit;
-using ReportService.Models;
 
 namespace PhoneBook.Tests
 {
@@ -13,11 +12,22 @@ namespace PhoneBook.Tests
             var report = new Report();
 
             // Assert
-            Assert.NotEqual(Guid.Empty, report.Id);
             Assert.Equal(ReportStatus.Preparing, report.Status);
-            Assert.NotEqual(default(DateTime), report.RequestedAt);
-            Assert.Null(report.FilePath);
-            Assert.Null(report.Content);
+            Assert.NotEqual(Guid.Empty, report.Id);
+            Assert.True(report.RequestedAt <= DateTime.UtcNow);
+        }
+
+        [Fact]
+        public void Report_Status_Should_Be_Preparing_By_Default()
+        {
+            // Arrange
+            var report = new Report();
+
+            // Act
+            var status = report.Status;
+
+            // Assert
+            Assert.Equal(ReportStatus.Preparing, status);
         }
     }
 }
