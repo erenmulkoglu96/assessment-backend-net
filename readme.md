@@ -100,31 +100,31 @@ dotnet test
 
 ### 🚀 API Özellikleri:
 
-<ul><li>
-POST /api/person : Yeni kişi ekler
+<ul>
+<li>POST /api/person : Yeni kişi ekler</li>
 
-DELETE /api/person/{id} : Kişiyi siler
+<li>DELETE /api/person/{id} : Kişiyi siler</li>
 
-POST /api/person/{personId}/contactinfo : Kişiye iletişim bilgisi ekler
+<li>POST /api/person/{personId}/contactinfo : Kişiye iletişim bilgisi ekler</li>
 
-DELETE /api/contactinfo/{id} : İletişim bilgisini siler
+<li>DELETE /api/contactinfo/{id} : İletişim bilgisini siler</li>
 
-GET /api/person : Tüm kişileri listeler
+<li>GET /api/person : Tüm kişileri listeler</li>
 
-GET /api/person/{id} : Bir kişinin iletişim detaylarını getirir
+<li>GET /api/person/{id} : Bir kişinin iletişim detaylarını getirir</li>
 
-POST /api/report : Rapor talebi başlatır (asenkron çalışır)
+<li>POST /api/report : Rapor talebi başlatır (asenkron çalışır)</li>
 
-GET /api/report : Tüm raporları listeler
+<li>GET /api/report : Tüm raporları listeler</li>
 
-GET /api/report/{id} : Bir raporu ve detaylarını getirir
+<li>GET /api/report/{id} : Bir raporu ve detaylarını getirir</li>
 
-GET /api/report/{id}/download : JSON rapor dosyasını indirir
+<li>GET /api/report/{id}/download : JSON rapor dosyasını indirir</li>
 
-GET /api/report/{id}/download/csv : CSV rapor dosyasını indirir
+<li>GET /api/report/{id}/download/csv : CSV rapor dosyasını indirir</li>
 
-DELETE /api/report/{id} : Raporu ve dosyaları siler
-</li></ul>
+<li>DELETE /api/report/{id} : Raporu ve dosyaları siler</li>
+</ul>
 
 ### 🛡️ Ekstra Özellikler:
 
