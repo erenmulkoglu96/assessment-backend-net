@@ -69,7 +69,7 @@ Bu proje, bir telefon rehberi sistemini mikroservisler mimarisi ile geliştirmek
 1. Gerekli bağımlılıkların yüklenmesi
 | ------------- | ------------------------------------------- |
 
-|dotnet restore|
+| dotnet restore |
 
 3. PostgreSQL ve Kafka'nın Docker üzerinden çalıştırılması
 docker-compose -f docker-compose.yml -f docker-compose.kafka.yml up -d
