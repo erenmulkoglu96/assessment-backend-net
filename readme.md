@@ -31,13 +31,9 @@ Bu proje, bir telefon rehberi sistemini mikroservisler mimarisi ile geliştirmek
 Kişi (Person)
 
 Alan	- Açıklama
-
 UUID	Kişiye özel benzersiz ID
-
 FirstName	İsim
-
 LastName	Soyisim
-
 Company	Çalıştığı şirket
 
 ContactInfos	İletişim Bilgileri
