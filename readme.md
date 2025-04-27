@@ -68,28 +68,35 @@ Bu proje, bir telefon rehberi sistemini mikroservisler mimarisi ile geliştirmek
 
 1. Gerekli bağımlılıkların yüklenmesi
 ```bash
-
 dotnet restore
-
 ```
 
 3. PostgreSQL ve Kafka'nın Docker üzerinden çalıştırılması
+```bash
 docker-compose -f docker-compose.yml -f docker-compose.kafka.yml up -d
+```
 
 4. Veritabanı Migration işleminin yapılması
+```bash
 dotnet ef database update -p ReportService -s ReportService
+```
 
 5. Uygulamanın Başlatılması
+```bash
 dotnet run --project ReportService
+```
 
-6. Swagger Üzerinden Test Etmek
+7. Swagger Üzerinden Test Etmek
+```bash
 https://localhost:44393/swagger
-
+```
 
 🧪 Unit Test Çalıştırmak:
 
 Projede yazılan xUnit testlerini çalıştırmak için:
+```bash
 dotnet test
+```
 
 🚀 API Özellikleri:
 
