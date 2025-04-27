@@ -1,0 +1,13 @@
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.dbmdl
+*.log
+*.ncb
+*.sdf
+*.opensdf
+*.VC.db
+*.vscode/

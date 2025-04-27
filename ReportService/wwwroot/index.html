@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>📊 ReportService Panel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f6f8;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+            button:hover {
+                background-color: #45a049;
+            }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        a {
+            color: #1e88e5;
+            text-decoration: none;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+        .status-preparing {
+            color: orange;
+            font-weight: bold;
+        }
+
+        .status-completed {
+            color: green;
+            font-weight: bold;
+        }
+
+        #loading {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+            #loading img {
+                width: 50px;
+            }
+    </style>
+</head>
+<body>
+
+    <h1>📊 ReportService Panel</h1>
+
+    <button onclick="requestReport()">➕ Yeni Rapor İste</button>
+
+    <div id="loading">
+        <img src="https://i.gifer.com/ZZ5H.gif" alt="Loading...">
+        <p>Yükleniyor...</p>
+    </div>
+
+    <h2>📝 Tamamlanan Raporlar</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Rapor ID</th>
+                <th>Durum</th>
+                <th>Oluşturulma Tarihi</th>
+                <th>JSON İndir</th>
+                <th>CSV İndir</th>
+            </tr>
+        </thead>
+        <tbody id="reportsList">
+            <!-- Raporlar burada -->
+        </tbody>
+    </table>
+
+    <script>
+        async function requestReport() {
+            showLoading();
+            await fetch('/api/Report', { method: 'POST' });
+            alert('Rapor isteği gönderildi!');
+            await loadReports();
+        }
+
+        async function loadReports() {
+            showLoading();
+            const response = await fetch('/api/Report');
+            const reports = await response.json();
+
+            const reportsList = document.getElementById('reportsList');
+            reportsList.innerHTML = '';
+
+            reports.forEach(report => {
+                const statusClass = report.status === 1 ? 'status-completed' : 'status-preparing';
+                const statusText = report.status === 1 ? '✅ Completed' : '⏳ Preparing';
+                const completedAt = report.completedAt ? new Date(report.completedAt).toLocaleString() : "-";
+
+                const row = `
+                        <tr>
+                            <td>${report.id}</td>
+                            <td class="${statusClass}">${statusText}</td>
+                            <td>${completedAt}</td>
+                            <td>
+                                ${report.filePath ? `<a href="${report.fileUrl}" target="_blank">JSON İndir</a>` : '-'}
+                            </td>
+                            <td>
+                                ${report.csvPath ? `<a href="/api/Report/${report.id}/download/csv" target="_blank">CSV İndir</a>` : '-'}
+                            </td>
+
+                        </tr>
+                    `;
+                reportsList.innerHTML += row;
+            });
+
+            hideLoading();
+        }
+
+        function showLoading() {
+            document.getElementById('loading').style.display = 'block';
+        }
+
+        function hideLoading() {
+            document.getElementById('loading').style.display = 'none';
+        }
+
+        loadReports();
+
+        setInterval(loadReports, 10000);
+
+    </script>
+
+</body>
+</html>
