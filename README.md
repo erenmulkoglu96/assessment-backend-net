@@ -96,7 +96,7 @@ https://localhost:44393/swagger
 https://localhost:44393/index.html
 ```
 
-### 🧪 Unit Test Çalıştırmak:
+###  Unit Test Çalıştırmak:
 
 Projede yazılan xUnit testlerini çalıştırmak için:
 ```bash
