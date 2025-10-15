@@ -1,9 +1,9 @@
-﻿# 📖 PhoneBook Microservices Backend Assessment
+﻿#  PhoneBook Microservices Backend Assessment
 
 Bu proje, bir telefon rehberi sistemini mikroservisler mimarisi ile geliştirmek amacıyla .NET Core kullanılarak hazırlanmıştır.
 
 
-### 🛠 Kullanılan Teknolojiler:
+###  Kullanılan Teknolojiler:
 
 - .NET Core 9
 - PostgreSQL (Docker üzerinden çalıştırıldı)
@@ -13,7 +13,7 @@ Bu proje, bir telefon rehberi sistemini mikroservisler mimarisi ile geliştirmek
 - Git & GitHub
 
 
-### 📋 Projenin Özellikleri:
+###  Projenin Özellikleri:
 
 - Rehberde kişi oluşturma
 - Rehberden kişi kaldırma
@@ -27,7 +27,7 @@ Bu proje, bir telefon rehberi sistemini mikroservisler mimarisi ile geliştirmek
 - Raporlar hem JSON hem CSV formatında oluşturulabilir ve indirilebilir
 
 
-### 📚 Veri Yapıları
+###  Veri Yapıları
 
 | Alan          | Açıklama                                    |
 | ------------- | ------------------------------------------- |
@@ -50,7 +50,7 @@ Bu proje, bir telefon rehberi sistemini mikroservisler mimarisi ile geliştirmek
 
 
 
-### 🛠 Teknik Gereksinimler ve Durum:
+###  Teknik Gereksinimler ve Durum:
 
 | İstenilen Gereksinim          | Durum                                    |
 | ------------- | ------------------------------------------- |
@@ -64,7 +64,7 @@ Bu proje, bir telefon rehberi sistemini mikroservisler mimarisi ile geliştirmek
 |Rapor kısmında Kafka ile asenkron yapı kullanımı |  Yapıldı
 
 
-### ⚙️ Projenin Çalıştırılması:
+###  Projenin Çalıştırılması:
 
 1. Gerekli bağımlılıkların yüklenmesi
 ```bash
@@ -103,7 +103,7 @@ Projede yazılan xUnit testlerini çalıştırmak için:
 dotnet test
 ```
 
-### 🚀 API Özellikleri:
+###  API Özellikleri:
 
 <ul>
 <li>POST /api/person : Yeni kişi ekler</li>
@@ -131,13 +131,13 @@ dotnet test
 <li>DELETE /api/report/{id} : Raporu ve dosyaları siler</li>
 </ul>
 
-### 🛡️ Ekstra Özellikler:
+###  Ekstra Özellikler:
 
 - Swagger UI üzerinden test yapılabilir
 - JSON ve CSV dosyaları wwwroot/reports klasörüne otomatik kaydedilir
 - Arka planda Kafka consumer çalışarak asenkron rapor üretimi sağlar
 
-### 📢 Not:
+###  Not:
 
 Bu proje, teknik değerlendirme süreci için sıfırdan inşa edilerek hazırlanmış bir mimaridir. 
 
