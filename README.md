@@ -1,4 +1,4 @@
-﻿#  PhoneBook Microservices Backend Assessment
+<img width="3840" height="1083" alt="image" src="https://github.com/user-attachments/assets/57cc113e-dd59-4971-b051-3df92b5956cf" /><img width="3840" height="1083" alt="image" src="https://github.com/user-attachments/assets/04079d21-d634-4b00-860a-8f3fa8715cba" />﻿#  PhoneBook Microservices Backend Assessment
 
 Bu proje, bir telefon rehberi sistemini mikroservisler mimarisi ile geliştirmek amacıyla .NET Core kullanılarak hazırlanmıştır.
 
@@ -105,31 +105,21 @@ dotnet test
 
 ###  API Özellikleri:
 
-<ul>
-<li>POST /api/person : Yeni kişi ekler</li>
+| Method | Endpoint | Açıklama |
+|--------|----------|----------|
+| POST | /api/person | Yeni kişi ekler
+| DELETE | /api/person/{id} | Kişiyi siler
+| POST | /api/person/{personId}/contactinfo | Kişiye iletişim bilgisi ekler
+| DELETE | /api/contactinfo/{id} | İletişim bilgisini siler
+| GET | /api/person | Tüm kişileri listeler
+| GET | /api/person/{id} | Bir kişinin iletişim detaylarını getirir
+| POST | /api/report | Rapor talebi başlatır (asenkron çalışır)
+| GET | /api/report | Tüm raporları listeler
+| GET | /api/report/{id} | Bir raporu ve detaylarını getirir
+| GET | /api/report/{id}/download | JSON rapor dosyasını indirir
+| GET | /api/report/{id}/download/csv | CSV rapor dosyasını indirir
+| DELETE | /api/report/{id} | Raporu ve dosyaları siler
 
-<li>DELETE /api/person/{id} : Kişiyi siler</li>
-
-<li>POST /api/person/{personId}/contactinfo : Kişiye iletişim bilgisi ekler</li>
-
-<li>DELETE /api/contactinfo/{id} : İletişim bilgisini siler</li>
-
-<li>GET /api/person : Tüm kişileri listeler</li>
-
-<li>GET /api/person/{id} : Bir kişinin iletişim detaylarını getirir</li>
-
-<li>POST /api/report : Rapor talebi başlatır (asenkron çalışır)</li>
-
-<li>GET /api/report : Tüm raporları listeler</li>
-
-<li>GET /api/report/{id} : Bir raporu ve detaylarını getirir</li>
-
-<li>GET /api/report/{id}/download : JSON rapor dosyasını indirir</li>
-
-<li>GET /api/report/{id}/download/csv : CSV rapor dosyasını indirir</li>
-
-<li>DELETE /api/report/{id} : Raporu ve dosyaları siler</li>
-</ul>
 
 ###  Ekstra Özellikler:
 
