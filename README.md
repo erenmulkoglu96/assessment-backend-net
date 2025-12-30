@@ -1,5 +1,3 @@
-<img width="3840" height="1083" alt="image" src="https://github.com/user-attachments/assets/57cc113e-dd59-4971-b051-3df92b5956cf" /><img width="3840" height="1083" alt="image" src="https://github.com/user-attachments/assets/04079d21-d634-4b00-860a-8f3fa8715cba" />﻿#  PhoneBook Microservices Backend Assessment
-
 Bu proje, bir telefon rehberi sistemini mikroservisler mimarisi ile geliştirmek amacıyla .NET Core kullanılarak hazırlanmıştır.
 
 
